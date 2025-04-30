@@ -1,0 +1,475 @@
+:root {
+    --outfit: "Poppins", sans-serif;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    box-sizing: border-box;
+    font-family: var(--outfit);
+}
+
+.h1 {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 1.2;
+    color: white;
+}
+
+p {
+    font-weight: 450;
+    white-space: nowrap;
+    font-size: smaller;
+    color: white;
+}
+
+.main {
+    width: 100%;
+    min-height: 100vh;
+    background-color: hsl(0, 100%, 74%);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 15px;
+    height: auto;
+    align-items: center;
+}
+
+.writeup {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.sub-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    padding: 15px;
+    margin-right: 20px;
+    /* border: 2px solid blue; */
+}
+
+.top {
+    width: 70%;
+    font-size: 14px;
+    background: hsl(248, 32%, 49%);
+    color: white;
+    padding: 13px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    height: 30px;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+}
+
+.writeup p {
+    white-space: normal;
+    word-wrap: break-word;
+    font-size: smaller;
+    line-height: 1.5;
+    width: 80%;
+    text-align: center;
+}
+/*.ad{
+    margin-right: 21px;
+}
+.adjust{
+    margin-left: 48px;
+}*/
+.form {
+    width: 70%;
+    max-width: 400px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    height: auto;
+    text-align: center;
+}
+
+input {
+    outline: none;
+    padding: 13px;
+    margin: 8px 0;
+    border-radius: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}
+
+input::placeholder {
+    font-weight: 500;
+    font-family: var(--outfit);
+}
+
+input:focus::placeholder {
+    font-weight: 600;
+    color: rgb(107, 105, 105);
+}
+
+input:focus {
+    border: 2px solid hsl(248, 32%, 49%);
+    outline: none;
+}
+
+.terms {
+    font-size: xx-small;
+    margin-top: 10px;
+    color: hsl(246, 25%, 77%);
+}
+
+.terms a {
+    color: hsl(0, 100%, 74%);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#btn {
+    width: 100%;
+    background: hsl(154, 59%, 51%);
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#btn:hover {
+    background: hsl(154, 59%, 51%);
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+.input-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.input-group {
+    width: 100%;
+    padding: 12px;
+    padding-right: 40px;
+    border: 1px solid hsl(246, 25%, 77%);
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+/* .input-group.error {
+    border: 2px solid hsl(0, 100%, 74%);
+    background: none;
+} */
+/*input:required{
+    border: 2px solid hsl(0, 100%, 74%);
+    background: none;
+}
+input:optional{
+    border: 2px solid hsl(248, 32%, 49%);
+    outline: none;
+}
+input:valid{
+    border: 2px solid hsl(248, 32%, 49%);;
+    background: none;
+}*/
+input:user-invalid{
+    border: 2px solid hsl(0, 100%, 74%);
+    outline: none;
+}
+input:user-invalid:focus {
+    outline: none;
+    border: 2px solid hsl(0, 100%, 74%);
+  }
+/*.error-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+}*/
+
+.error-message {
+    color: hsl(0, 100%, 74%);
+    font-size: 12px;
+    font-weight: 600;
+    /* margin-top: 15px; */
+    /* display: none; */
+    /* position: absolute;
+    right: 0;
+    bottom: -16px; */
+}
+
+.input-container.has-error {
+    /* margin-bottom: 20px; */
+}
+
+/* MEDIA QUERY for Desktop */
+@media screen and (min-width: 1024px) {
+    .main {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        text-align: left;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .writeup{
+        width: auto;
+        color: white;
+        padding-right: 30px;
+        text-align: justify;
+        align-items: center;
+    }
+
+    .writeup .h1 {
+        font-size: 50px;
+    }
+
+    .writeup p {
+        font-size: 16px;
+        white-space: nowrap ;
+        text-align: justify;
+    }
+
+    .sub-main {
+        width: auto;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .top {
+        width: 380px;
+    }
+
+    .form {
+        width: 370px;
+    }
+
+    #btn {
+        width: 100%;
+    }
+
+    .terms {
+        text-align: center;
+    }
+}
+/*:root {
+    --outfit: "Poppins", sans-serif}
+html, body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    box-sizing: border-box;
+    font-family:var(--outfit);
+}
+.h1{
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 1.2;
+}
+p{
+    font-weight: 450;
+    white-space: nowrap;
+    font-size: smaller;
+}
+.main {
+    width: 100%;
+    min-height: 100vh;
+    height: 100vh;
+     background-color: hsl(0, 100%, 74%) ; 
+     display: flex; 
+    flex-direction: column; 
+    text-align: center; 
+    padding: 20px; 
+    height: auto;
+}
+.writeup {
+    width: 100%; 
+    text-align: center; 
+    margin-bottom: 20px; 
+}
+.sub-main {
+    display: flex; 
+    flex-direction: column;
+    align-items: center; 
+    position: relative;
+    width: 100%;
+}
+.top {
+    width: 90%; 
+    font-size: 14px; 
+    background: hsl(248, 32%, 49%);
+    color: white;
+    padding: 13px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    height: 30px;
+    justify-content: center;
+    align-content: center; 
+    text-align: center; 
+}
+.writeup p {
+    white-space: normal; 
+    word-wrap: break-word;
+    font-size: smaller; 
+    line-height: 1.5;
+}
+.form {
+    width: 90%; 
+    max-width: 400px; 
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    height: auto;
+    text-align: center;
+}
+input {
+    outline: none;
+    padding: 13px;
+    margin: 8px 0;
+    border-radius: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}
+input::placeholder {
+    font-weight: 500; 
+    font-family:var(--outfit) ;
+}
+input:focus::placeholder {
+    font-weight: 600;
+   color: rgb(107, 105, 105);
+}
+
+input:focus {
+    border: 2px solid  hsl(248, 32%, 49%); 
+    outline: none; 
+}
+
+.terms {
+    font-size: xx-small;
+    margin-top: 10px;
+    color: hsl(246, 25%, 77%)
+    ;
+}
+.terms a {
+    color:hsl(0, 100%, 74%);
+    text-decoration: none;
+    font-weight: bold;
+}
+#btn {
+    width: 100%;
+    background: hsl(154, 59%, 51%);
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+#btn:hover {
+    background:  hsl(154, 59%, 51%);
+}
+.attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+@media screen and (min-width: 400px) {
+    .main{
+        flex-direction: row;
+        justify-content: center;
+        align-items: center; 
+    }
+    .sub-main{
+        width: 100%;
+        justify-content: space-between; 
+        align-items: center;
+    }
+    .h1{
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 1.2;
+    }
+    p{
+        font-weight: 450;
+        white-space: nowrap;
+        font-size: smaller;
+    }
+    .writeup{
+        width: 35%;
+        color: white;
+    }
+    .top{
+        width: 380px;
+    }
+    input {
+        width: 90%;
+    }
+    .form{
+        width: 370px;
+    }
+    #btn {
+        width: 100%;
+    }
+}
+
+.input-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.input-group {
+    width: 100%;
+    padding: 12px;
+    padding-right: 40px; 
+    border: 1px solid hsl(246, 25%, 77%);
+    border-radius: 5px;
+    box-sizing: border-box; /* Ensures padding doesn’t increase width 
+}
+
+.input-group.error {
+    border: 2px solid hsl(0, 100%, 74%);
+    background: none; 
+}
+
+.error-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+}
+
+.error-message {
+    color: hsl(0, 100%, 74%);
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: 15px;
+    display: none;
+    position: absolute;
+    right: 0; 
+    bottom: -16px; 
+}  
+.input-container.has-error {
+    margin-bottom: 20px; 
+}
