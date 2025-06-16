@@ -13,8 +13,7 @@ const passwordError = document.getElementById("password-error");
 // min of 9 characters with atleast 1 number and 1 letter
 const passwordRegex = /(?=.*[a-zA-Z])(?=.*[0-9]).{9,}/
 const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
-const passwordMessage = 'Min of 9 characters, at least 1 number and 1 letter';
-
+let isValid = true;
 function handleValidation (e) {
   const value = e.target.value.trim();
   switch (e.target.name) {
@@ -22,9 +21,10 @@ function handleValidation (e) {
       if (!e.target.value) {
         console.log("First name failed validation");
         firstNameError.innerHTML = "First name is required";
+        isValid = false;
       } else {
         firstNameError.innerHTML = "";
-        errorIcon.style.display = "none";
+        isValid = true;
       }
       break;
       
@@ -32,32 +32,43 @@ function handleValidation (e) {
       if (!e.target.value) {
         console.log("Last name failed validation");
         lastNameError.innerHTML = "Last name is required";
+        isValid = false;
       } else {
         lastNameError.innerHTML = "";
+        isValid = true;
       }
       break;
 
     case "email":
+      const emaill = e.target.value;
+
       if (!e.target.value) {
         console.log("Email failed validation");
         emailError.innerHTML = "Email is required";
-      } else if(!emailRegex.test(email)){
+        isValid = false;
+      }else if(!emailRegex.test(emaill)){
         console.log("Email not valid");
         emailError.innerHTML = "Looks like this is not a valid email";
-      } else {
+      } 
+      else {
         emailError.innerHTML = "";
+        isValid = true;
       }
       break;
 
     case "password":
+      const passworrd = e.target.value;
+
       if (!e.target.value) {
         console.log("Password failed validation");
         passwordError.innerHTML = "Password is required";
-      } else if (!passwordRegex.test(password)){
+        isValid = false;
+      } else if (!passwordRegex.test(passworrd)){
         console.log("Password is not strong");
-        passwordError.innerHTML = passwordMessage;
-      } else {
+          passwordError.innerHTML = "Min of 9 characters, at least 1 number and 1 letter";}
+      else {
         passwordError.innerHTML = "";
+        isValid = true;
       }
       break;
 
@@ -71,6 +82,14 @@ lastName.addEventListener("input", handleValidation);
 email.addEventListener("input", handleValidation);
 password.addEventListener("input", handleValidation);
 
+
+   //if (isValid) {
+     //   alert("Form Submitted Successfully!"); 
+   // document.getElementById("form").reset();
+     // setTimeout(() => {
+       // location.reload();
+    // }, 500);
+   // }
     // const data= Object.fromEntries(new FormData(e.currentTarget).entries())
     // console.log(data)
 
